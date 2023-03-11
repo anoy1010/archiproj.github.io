@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <title>ArchiProject | PORTFOLIO</title>
 </head>
 <body>
         <header class="">
-                <nav class=" container mx-auto py-10 px-4 flex  justify-around items-center  " aria-label="Global">
+                <nav class=" mx-auto flex max-w7xl items-center justify-between p-6 lg:px-8  " aria-label="Global">
                     <div class="flex lg:flex-1">
                         <a href="#" class=" -m-0.5 p-0.5">
                             <span class="sr-only">your company</span>
@@ -19,14 +19,14 @@
                         </a>
                     </div>
                     <div class="flex lg:hidden">
-                        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="open = true" >
                           <span class="sr-only">Ouvrir le menu</span>
-                          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                          <svg class="h-6 w-6"   fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                           </svg>
                         </button>
                       </div>
-                    <div class="hidden lg:flex lg:gap-x-12">
+                    <div class="sidebar hidden lg:flex lg:gap-x-12">
                         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Acceuil</a>
                 
                         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">A propos</a>
@@ -38,21 +38,22 @@
                        
                 </nav>
                 <!-- mobile-->
-                <div role="dialog" aria-modal="true">
+                <div class="lg:hidden" role="dialog" aria-modal="true" style="display: none;">
                     <div class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
-                      <div class="flex items-center justify-between">
+
+                      <div  class="flex items-center justify-between">
                         <a href="#" class="-m-1.5 p-1.5">
                           <span class="sr-only">Your Company</span>
                           <img class="h-12" src="img/dark.png" alt="">
                         </a>
-                        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                        <button  type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="open = false" >
                           <span class="sr-only">Close menu</span>
-                          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                          <svg class="h-6 w-6 toggle-close"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                           </svg>
                         </button>
                       </div>
-                      <div class="mt-6 flow-root">
+                      <div class=" sidebar mt-6 flow-root">
                         <div class="-my-6 divide-y divide-gray-500/10">
                           <div class="space-y-2 py-6">
                             <a href="#" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Acceuilt</a>
@@ -71,23 +72,25 @@
         </header>
 
        <main>
-        <section class="bg-black " >
-            <div>
-                <div class="container mx-auto py-10 px-4  relative  ">
-                    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56  mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+        <section class="bg-cover bg-center transition-all  duration-300 cursor-pointer filter grayscale-0 hover:grayscale " style="background-image: url(img/im1.jpg)" >
+            <div class="h-auto">
+                <div class="container mx-auto py-10 px-4   ">
+                    <div class="mx-auto max-w-lg py-12 sm:py-48 lg:py-36  mx-auto grid max-w-2xl grid-cols-2 place-items-center  gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                         <div class="text-left ">
                             <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Data to enrich your online business</h1>
-                            <p class="mt-6 text-lg leading-8 text-white">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+                            <p class="mt-6 text-lg leading-8 text-white">Anim aute id magna aliqua ad ad non deserunt sunt.
+                              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
+                              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
+                               Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
+                               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat aliqua.</p>
                             <div class="mt-10 flex items-center justify-start gap-x-6">
                               <a href="#" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-bold text-black shadow-sm hover:bg-slate-200 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
                               <a href="#" class="text-sm font-semibold leading-6 text-white transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-110 duration-300">Learn more <span aria-hidden="true" >→</span></a>
                             </div>
                           </div>
-                          <div class="grid grid-cols-2 gap-4 place-content-center place-items-center h-40">
-                            <img class="w-8/12 object-contain cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-125 hover: duration-300 rounded-full " src="https://www.home-style-bordeaux.com/upload-cms/gallerie-6.jpg" alt=""> 
-                            <img class="w-10/12 object-contain cursor-pointer transition ease-in-out delay-150 hover:translate-x-2 hover:scale-75 hover: duration-300 rounded-full" src="https://iamdesign.fr/wp-content/uploads/2020/02/PHOTO-CUISINE-10-1.png" alt=""> 
-                            <img class="w-12/12 object-contain cursor-pointer transition ease-in-out delay-150 hover:-translate-x-3 hover:scale-75 hover: duration-300 rounded-full" src="https://www.idkrea.com/sites/idkrea.com/files/actualite/5_mots_cles_decoration_interieure_cuisine_chic_intemporelle_idkrea_rennes.jpg" alt=""> 
-                            <img class=" w-7/12 object-contain cursor-pointer transition ease-in-out delay-150 hover:translate-y-3 hover:scale-125 hover: duration-300 rounded-full" src="https://blog.but.fr/wp-content/uploads/2020/03/01-amenagement-salon.jpg" alt="">  
+                          
+                          <div class=" w-full h-full place-content-stretch place-items-stretch  relative  sm:max-lg:hidden max-sm:hidden">
+                            <img class=" absolute right-0  w-[500px] object-cover rounded-full" src="" alt="">  
                           </div>
                     </div>
                 </div>
@@ -141,7 +144,7 @@
                                 </dl>
                               </div>
                             </div>
-                            <img src="https://cdn2.hubspot.net/hubfs/2393989/2.%20Vincendo%20Particulier%20-%20COVER%20Blog/logiciels-plans-maison-couverture.jpg" alt="Product screenshot" class="w-[48rem] translation ease-in-out delay-150 hover:translate-x-6   duration-300 w-full h-full object-cover rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+                            <img src="img/im11.JPG" alt="Product screenshot" class="w-[48rem] h-[550px] object-cover translation ease-in-out delay-150 hover:translate-x-6   duration-300 w-full max-h-min object-cover rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
                           </div>
                         </div>
                       </div>
@@ -188,7 +191,7 @@
                                 </dl>
                               </div>
                             </div>
-                            <img src="https://cdn2.hubspot.net/hubfs/2393989/2.%20Vincendo%20Particulier%20-%20COVER%20Blog/logiciels-plans-maison-couverture.jpg" alt="Product screenshot" class="w-[48rem] translation ease-in-out delay-150 hover:-translate-x-6   duration-300 w-full h-full object-cover rounded-xl shadow-xl ring-1 ring-gray-400/10  sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+                            <img src="img/im10.PNG" alt="Product screenshot" class="w-[48rem] h-[550px] translation ease-in-out delay-150 hover:-translate-x-6   duration-300 object-cover rounded-xl shadow-xl ring-1 ring-gray-400/10  sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
                           </div>
                         </div>
                       </div>
@@ -522,6 +525,9 @@
           </div>
         </section>
        </main>
-        
+        <footer>
+
+        </footer>
+        <script src="script.js"></script>
 </body>
 </html>
