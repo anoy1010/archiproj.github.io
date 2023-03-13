@@ -6,27 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>ArchiProject | PORTFOLIO</title>
 </head>
 <body>
         <header class="">
                 <nav class=" mx-auto flex max-w7xl items-center justify-between p-6 lg:px-8  " aria-label="Global">
-                    <div class="flex lg:flex-1">
-                        <a href="#" class=" -m-0.5 p-0.5">
+                    <div class="flex lg:flex-1" id="acceuil">
+                        <a href="#accueil" class=" -m-0.5 p-0.5">
                             <span class="sr-only">your company</span>
                             <img class="h-12" src="img/dark.png" alt="ArchiProject">
                         </a>
                     </div>
                     <div class="flex lg:hidden">
-                        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="open = true" >
+                        <button type="button" class="px-5 inline-flex  items-center justify-center rounded-md py-2 text-gray-700" >
                           <span class="sr-only">Ouvrir le menu</span>
-                          <svg class="h-6 w-6"   fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                          </svg>
+                          <ion-icon onclick="onToggleMenu(this)" class="text-4xl cursor-pointer" name="menu"></ion-icon>
                         </button>
                       </div>
-                    <div class="sidebar hidden lg:flex lg:gap-x-12">
+                    <div class="hidden lg:flex lg:gap-x-12">
                         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Acceuil</a>
                 
                         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">A propos</a>
@@ -37,39 +36,38 @@
                       </div>
                        
                 </nav>
-                <!-- mobile-->
-                <div class="lg:hidden" role="dialog" aria-modal="true" style="display: none;">
-                    <div class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
 
-                      <div  class="flex items-center justify-between">
-                        <a href="#" class="-m-1.5 p-1.5">
-                          <span class="sr-only">Your Company</span>
-                          <img class="h-12" src="img/dark.png" alt="">
-                        </a>
-                        <button  type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="open = false" >
-                          <span class="sr-only">Close menu</span>
-                          <svg class="h-6 w-6 toggle-close"  fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        </button>
-                      </div>
-                      <div class=" sidebar mt-6 flow-root">
-                        <div class="-my-6 divide-y divide-gray-500/10">
-                          <div class="space-y-2 py-6">
-                            <a href="#" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Acceuilt</a>
+                <div class="lg:hidden "  >
+                  <div class="hidden  fixed sideBar inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
               
-                            <a href="#" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">A propos</a>
+                    <div  class="flex items-center justify-between">
+                      <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                        <img class="h-12" src="img/dark.png" alt="">
+                      </a>
+                      <button  type="button" class="px-5 py-2 rounded-md  text-gray-700">
+                        <span class="sr-only">Close menu</span>
+                        <ion-icon onclick="onToggleMenu(this)" class="text-4xl cursor-pointer" name="close"></ion-icon>
               
-                            <a href="#" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Travaux</a>
+                      </button>
+                    </div>
+                    <div class=" mt-6 flow-root">
+                      <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                          <a href="#acceuil" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Acceuil</a>
               
-                            <a href="#" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Contact</a>
-                          </div>
-                          
+                          <a href="#" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">A propos</a>
+              
+                          <a href="#" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Travaux</a>
+              
+                          <a href="#" class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10">Contact</a>
                         </div>
+                        
                       </div>
                     </div>
-                  </div>       
-        </header>
+                  </div>
+                </div>          
+                      </header>
 
        <main>
         <section class="bg-gradient-to-r from-black" >
